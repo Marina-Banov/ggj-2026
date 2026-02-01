@@ -1,11 +1,20 @@
 extends Node2D
 
 
+const TARGETS = [
+	Transform2D(PI, Vector2(550, 550)),
+	Transform2D(-PI/2, Vector2( 0, 550)),
+	Transform2D(PI/2, Vector2(550,  0)),
+	Transform2D(0, Vector2( 0,  0))
+]
+
+
 func spawn_line():
 	const PROJECTILE = preload("res://Scenes/projectile.tscn")
 	var new_projectile = PROJECTILE.instantiate()
-	new_projectile.global_position = Vector2.ZERO
-	#new_projectile.rotation = -PI/2
+	var target = TARGETS.pick_random()
+	new_projectile.global_position = target.get_origin()
+	new_projectile.rotation = target.get_rotation()
 	add_child(new_projectile)
 
 
