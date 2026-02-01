@@ -3,9 +3,11 @@ extends CharacterBody2D
 @export var player_id = 0
 
 const SPEED = 200.0
+
 const DASH_SPEED = 600.0
 const DASH_DURATION = 0.15
 const DASH_COOLDOWN = 0.5
+
 const MAX_HP = 3
 const HP_COLORS = [
 	Color(0.09, 0.13, 0.25),
@@ -14,11 +16,11 @@ const HP_COLORS = [
 	Color(0.29, 0.63, 0.38), 
 ]
 
-var hp = MAX_HP
 var dash_time_remaining = 0.0
 var dash_cooldown_remaining = 0.0
 var dash_direction = Vector2.ZERO
-var invulnerable = false
+
+var hp = MAX_HP
 
 
 func _ready() -> void:
@@ -29,7 +31,8 @@ func _physics_process(delta: float) -> void:
 	if dash_cooldown_remaining > 0:
 		dash_cooldown_remaining -= delta
 	else:
-		invulnerable = false
+		%HurtBox.monitoring = true
+		_set_color_for_hp()
 	
 	if dash_time_remaining > 0:
 		dash_time_remaining -= delta
@@ -54,13 +57,14 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 
 
 func _take_damage() -> void:
-	if hp > 0 and not invulnerable:
+	if hp > 0:
 		hp -= 1
 	_set_color_for_hp()
 
 
 func _start_dash(dir: Vector2) -> void:
-	invulnerable = true
+	%HurtBox.monitoring = false
+	%Polygon2D.color = Color(%Polygon2D.color, 0.45)
 	dash_direction = dir
 	dash_time_remaining = DASH_DURATION
 	dash_cooldown_remaining = DASH_COOLDOWN
