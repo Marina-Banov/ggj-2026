@@ -14,7 +14,8 @@ script = ExtResource("1_4flbx")
 shape = SubResource("RectangleShape2D_sh265")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(0.9459496, 0.58483195, 0.78478295, 1)
+unique_name_in_owner = true
+color = Color(0.0975, 0.13816664, 0.25, 1)
 polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
 
 [node name="HurtBox" type="Area2D" parent="."]
