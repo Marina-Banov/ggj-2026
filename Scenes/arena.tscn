@@ -22,6 +22,7 @@ b = Vector2(547, 4)
 script = ExtResource("1_ubfh8")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
 
 [node name="Line2D" type="Line2D" parent="StaticBody2D"]
 points = PackedVector2Array(0, 0, 0, 550)
@@ -34,6 +35,7 @@ sharp_limit = 1.0
 shape = SubResource("SegmentShape2D_444vf")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_mask = 0
 
 [node name="Line2D" type="Line2D" parent="StaticBody2D2"]
 points = PackedVector2Array(0, 0, 550, 0)
@@ -45,6 +47,7 @@ end_cap_mode = 2
 shape = SubResource("SegmentShape2D_g21bf")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
+collision_mask = 0
 
 [node name="Line2D" type="Line2D" parent="StaticBody2D3"]
 points = PackedVector2Array(550, 550, 0, 550)
@@ -57,6 +60,7 @@ sharp_limit = 1.0
 shape = SubResource("SegmentShape2D_ubfh8")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
+collision_mask = 0
 
 [node name="Line2D" type="Line2D" parent="StaticBody2D4"]
 points = PackedVector2Array(550, 0, 550, 550)
@@ -69,7 +73,7 @@ sharp_limit = 1.0
 shape = SubResource("SegmentShape2D_27ga2")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 1.492
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="spawn_pickup"]

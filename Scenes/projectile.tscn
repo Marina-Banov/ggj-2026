@@ -7,6 +7,8 @@ a = Vector2(545, 0)
 b = Vector2(5, 0)
 
 [node name="Projectile" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("1_a85iw")
 
 [node name="Line2D" type="Line2D" parent="."]
