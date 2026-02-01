@@ -6,6 +6,10 @@ const RANGE = 550
 var travelled_distance = 0
 
 
+func _ready() -> void:
+	add_to_group("projectiles")
+
+
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.DOWN.rotated(rotation)
 	position += direction * SPEED * delta

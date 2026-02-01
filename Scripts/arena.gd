@@ -1,6 +1,5 @@
 extends Node2D
 
-
 const TARGETS = [
 	Transform2D(PI, Vector2(550, 550)),
 	Transform2D(-PI/2, Vector2( 0, 550)),
