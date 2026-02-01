@@ -12,8 +12,9 @@ offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0.057199996, 0.06952001, 0.11, 1)
 
-[node name="Player" parent="." instance=ExtResource("1_80nbo")]
-position = Vector2(266, 329)
+[node name="Player1" parent="." instance=ExtResource("1_80nbo")]
+position = Vector2(316, 295)
+player_id = 1
 
 [node name="Arena1" parent="." instance=ExtResource("2_e2o6t")]
 unique_name_in_owner = true
@@ -22,3 +23,7 @@ position = Vector2(81, 85)
 [node name="Arena2" parent="." instance=ExtResource("2_e2o6t")]
 unique_name_in_owner = true
 position = Vector2(655, 86)
+
+[node name="Player2" parent="." instance=ExtResource("1_80nbo")]
+position = Vector2(851, 331)
+player_id = 2

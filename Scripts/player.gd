@@ -4,10 +4,16 @@ const SPEED = 200
 const MAX_HP = 3
 
 var hp = MAX_HP
+@export var player_id = 0
 
 
 func _physics_process(_delta: float) -> void:
-	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	var direction = Input.get_vector(
+		"move_left_{0}".format([player_id]),
+		"move_right_{0}".format([player_id]),
+		"move_up_{0}".format([player_id]),
+		"move_down_{0}".format([player_id])
+	)
 	velocity = direction * SPEED
 	move_and_slide()
 
