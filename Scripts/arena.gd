@@ -8,7 +8,7 @@ const TARGETS = [
 ]
 
 
-func spawn_line():
+func spawn_line() -> void:
 	const PROJECTILE = preload("res://Scenes/projectile.tscn")
 	var new_projectile = PROJECTILE.instantiate()
 	var target = TARGETS.pick_random()
@@ -17,7 +17,7 @@ func spawn_line():
 	add_child(new_projectile)
 
 
-func spawn_pickup():
+func spawn_pickup() -> void:
 	const PICKUP = preload("res://Scenes/pickup.tscn")
 	var new_pickup = PICKUP.instantiate()
 	var rng = RandomNumberGenerator.new()
