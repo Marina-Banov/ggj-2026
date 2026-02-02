@@ -12,9 +12,9 @@ func _on_node_added(node: Node2D) -> void:
 
 func _on_pickup_collected(player_id: int) -> void:
 	if player_id == 1:
-		%Arena2.spawn_line()
+		%Arena2.call_deferred("spawn_line")
 	if player_id == 2:
-		%Arena1.spawn_line()
+		%Arena1.call_deferred("spawn_line")
 
 
 func _on_player_died(player_id: int) -> void:
