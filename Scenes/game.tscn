@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://gx4fktfrrmqh"]
+[gd_scene load_steps=5 format=3 uid="uid://gx4fktfrrmqh"]
 
 [ext_resource type="PackedScene" uid="uid://sewt5itu3e0u" path="res://Scenes/player.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://c6o3u372ks8nv" path="res://Scripts/game.gd" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://btmihvoaaef4b" path="res://Scenes/arena.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://dwb1gu3cggcp8" path="res://Scenes/game_over.tscn" id="4_3dryh"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_feb5d")
@@ -27,3 +28,10 @@ position = Vector2(655, 86)
 [node name="Player2" parent="." instance=ExtResource("1_80nbo")]
 position = Vector2(851, 331)
 player_id = 2
+
+[node name="GameOver" parent="." instance=ExtResource("4_3dryh")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="player_died" from="Player1" to="." method="_on_player_died"]
+[connection signal="player_died" from="Player2" to="." method="_on_player_died"]

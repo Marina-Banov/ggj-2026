@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var player_id = 0
+signal player_died(player_id)
 
 const SPEED = 200.0
 
@@ -23,16 +24,9 @@ var dash_direction = Vector2.ZERO
 var hp = MAX_HP
 
 
-func _ready() -> void:
-	_set_color_for_hp()
-
-
 func _physics_process(delta: float) -> void:
 	if dash_cooldown_remaining > 0:
 		dash_cooldown_remaining -= delta
-	else:
-		%HurtBox.monitoring = true
-		_set_color_for_hp()
 	
 	if dash_time_remaining > 0:
 		dash_time_remaining -= delta
@@ -45,9 +39,11 @@ func _physics_process(delta: float) -> void:
 			"move_down_{0}".format([player_id])
 		)
 		velocity = direction * SPEED
-		
+		%HurtBox.monitoring = true
 		if Input.is_action_just_pressed("dash_{0}".format([player_id])) and dash_cooldown_remaining <= 0 and direction != Vector2.ZERO:
 			_start_dash(direction)
+	
+	_set_color_for_hp()
 	move_and_slide()
 
 
@@ -59,12 +55,12 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 func _take_damage() -> void:
 	if hp > 0:
 		hp -= 1
-	_set_color_for_hp()
+	if hp == 0:
+		player_died.emit(player_id)
 
 
 func _start_dash(dir: Vector2) -> void:
 	%HurtBox.monitoring = false
-	%Polygon2D.color = Color(%Polygon2D.color, 0.45)
 	dash_direction = dir
 	dash_time_remaining = DASH_DURATION
 	dash_cooldown_remaining = DASH_COOLDOWN
@@ -72,3 +68,5 @@ func _start_dash(dir: Vector2) -> void:
 
 func _set_color_for_hp() -> void:
 	%Polygon2D.color = HP_COLORS[hp]
+	if not %HurtBox.monitoring:
+		%Polygon2D.color = Color(%Polygon2D.color, 0.45)

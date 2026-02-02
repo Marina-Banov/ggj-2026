@@ -76,4 +76,4 @@ shape = SubResource("SegmentShape2D_27ga2")
 wait_time = 1.492
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="spawn_pickup"]
+[connection signal="timeout" from="Timer" to="." method="_spawn_pickup"]
