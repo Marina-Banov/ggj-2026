@@ -1,6 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://yf0vm7ywmvje"]
+[gd_scene load_steps=5 format=3 uid="uid://yf0vm7ywmvje"]
 
 [ext_resource type="Script" uid="uid://lkqm6drnqkml" path="res://Scripts/projectile.gd" id="1_a85iw"]
+
+[sub_resource type="Gradient" id="Gradient_yr2qt"]
+offsets = PackedFloat32Array(0, 0.15, 0.3, 0.5, 0.7, 0.85, 1)
+colors = PackedColorArray(0.9033334, 0.42000002, 1, 0, 1, 0.26, 0.96300024, 0.5882353, 1, 0.19999999, 0.9600002, 1, 1, 1, 1, 1, 1, 0.19999999, 0.9600002, 1, 1, 0.26, 0.96300024, 0.5882353, 0.6857334, 0.4144, 0.74, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tl4hk"]
+gradient = SubResource("Gradient_yr2qt")
+width = 540
+height = 10
+use_hdr = true
+fill_to = Vector2(0, 1)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_akgne"]
 a = Vector2(545, 0)
@@ -11,9 +22,17 @@ collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_a85iw")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 5.0
+offset_top = -10.0
+offset_right = 545.0
+offset_bottom = 10.0
+texture = SubResource("GradientTexture2D_tl4hk")
+
 [node name="Line2D" type="Line2D" parent="."]
+visible = false
 points = PackedVector2Array(5, 0, 545, 0)
-default_color = Color(0.86, 0.61060005, 0.61060005, 1)
+default_color = Color(1, 0.26, 0.96300024, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("SegmentShape2D_akgne")
