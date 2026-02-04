@@ -1,12 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://gx4fktfrrmqh"]
+[gd_scene load_steps=6 format=3 uid="uid://gx4fktfrrmqh"]
 
 [ext_resource type="PackedScene" uid="uid://sewt5itu3e0u" path="res://Scenes/player.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://c6o3u372ks8nv" path="res://Scripts/game.gd" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://btmihvoaaef4b" path="res://Scenes/arena.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://dwb1gu3cggcp8" path="res://Scenes/game_over.tscn" id="4_3dryh"]
 
+[sub_resource type="Environment" id="Environment_3dryh"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 1.49
+glow_bloom = 0.15
+glow_blend_mode = 1
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_feb5d")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3dryh")
 
 [node name="Background" type="ColorRect" parent="."]
 offset_right = 1280.0
