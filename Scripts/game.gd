@@ -5,7 +5,7 @@ func _ready() -> void:
 	get_tree().node_added.connect(_on_node_added)
 
 
-func _on_node_added(node: Node2D) -> void:
+func _on_node_added(node: Node) -> void:
 	if node.is_in_group("pickups"):
 		node.collected.connect(_on_pickup_collected)
 
