@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ggj-2026"
-run/main_scene="uid://gx4fktfrrmqh"
+run/main_scene="uid://chxfaw62j2bbu"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
