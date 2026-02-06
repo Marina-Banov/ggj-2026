@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=66 format=3 uid="uid://beui2wbtbq7i0"]
+[gd_resource type="Theme" load_steps=68 format=3 uid="uid://beui2wbtbq7i0"]
 
 [ext_resource type="Texture2D" uid="uid://crnrlbavwukpg" path="res://Resources/icons/slider_grabber.svg" id="1_a5rho"]
 [ext_resource type="FontFile" uid="uid://diri8xkjifobd" path="res://Assets/Fonts/Orbitron-VariableFont_wght.ttf" id="1_oox6n"]
@@ -12,6 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://mmrh38p4gqim" path="res://Resources/icons/radio_checked.svg" id="6_23ocb"]
 [ext_resource type="Texture2D" uid="uid://b1fmnuufcjas1" path="res://Resources/icons/radio_unchecked.svg" id="7_350wl"]
 [ext_resource type="Texture2D" uid="uid://gq4fme83umik" path="res://Resources/icons/vslider_tick.svg" id="8_23ocb"]
+
+[sub_resource type="FontVariation" id="FontVariation_oox6n"]
+base_font = ExtResource("1_oox6n")
+spacing_glyph = 6
+spacing_top = 2
+spacing_bottom = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81hlo"]
 content_margin_left = 4.0
@@ -196,6 +202,10 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 anti_aliasing = false
+
+[sub_resource type="FontVariation" id="FontVariation_6t2iv"]
+base_font = ExtResource("1_oox6n")
+spacing_glyph = 4
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_81hlo"]
 
@@ -415,7 +425,7 @@ Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
 Button/colors/icon_normal_color = Color(1, 1, 1, 1)
 Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
 Button/font_sizes/font_size = 32
-Button/fonts/font = ExtResource("1_oox6n")
+Button/fonts/font = SubResource("FontVariation_oox6n")
 Button/styles/focus = SubResource("StyleBoxFlat_81hlo")
 Button/styles/hover = SubResource("StyleBoxFlat_81hlo")
 Button/styles/normal = SubResource("StyleBoxFlat_dsnp2")
@@ -466,7 +476,7 @@ HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_8usut")
 HSlider/styles/slider = SubResource("StyleBoxFlat_77rre")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/font_sizes/font_size = 32
-Label/fonts/font = ExtResource("1_oox6n")
+Label/fonts/font = SubResource("FontVariation_6t2iv")
 Label/styles/normal = SubResource("StyleBoxEmpty_81hlo")
 LineEdit/colors/clear_button_color = Color(1, 1, 1, 1)
 LineEdit/colors/font_color = Color(1, 1, 1, 1)
