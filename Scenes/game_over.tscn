@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dwb1gu3cggcp8"]
 
 [ext_resource type="Script" uid="uid://dorn5r4x8uyrr" path="res://Scripts/game_over.gd" id="1_8fo1c"]
-[ext_resource type="Theme" uid="uid://dde3uc253c4x6" path="res://sanko.theme" id="1_y26ei"]
+[ext_resource type="Theme" uid="uid://dde3uc253c4x6" path="res://Resources/neon_reflex.theme" id="1_y26ei"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yxx3c"]
 font_size = 48
