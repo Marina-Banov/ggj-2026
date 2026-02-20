@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1prt8d08w5ok"]
+
+[ext_resource type="Script" uid="uid://p501xpk25x5e" path="res://Scripts/game_solo.gd" id="1_7lhal"]
+[ext_resource type="Environment" uid="uid://bap1tngmqa2y8" path="res://Resources/environment.tres" id="1_v265e"]
+[ext_resource type="PackedScene" uid="uid://sewt5itu3e0u" path="res://Scenes/player.tscn" id="2_7lhal"]
+[ext_resource type="PackedScene" uid="uid://btmihvoaaef4b" path="res://Scenes/arena.tscn" id="3_vdxbm"]
+[ext_resource type="PackedScene" uid="uid://dwb1gu3cggcp8" path="res://Scenes/game_over.tscn" id="4_sn57n"]
+
+[node name="GameSolo" type="Node2D"]
+script = ExtResource("1_7lhal")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_v265e")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.05882353, 0.07058824, 0.10980392, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_7lhal")]
+unique_name_in_owner = true
+position = Vector2(556, 357)
+player_id = 1
+
+[node name="Arena" parent="." instance=ExtResource("3_vdxbm")]
+unique_name_in_owner = true
+position = Vector2(555, 356)
+
+[node name="GameOver" parent="." instance=ExtResource("4_sn57n")]
+unique_name_in_owner = true
+visible = false

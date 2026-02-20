@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://chxfaw62j2bbu"]
 
-[ext_resource type="Script" uid="uid://jkvtxu1vigof" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="Script" uid="uid://de2u6yiet1gxc" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
 [ext_resource type="Environment" uid="uid://bap1tngmqa2y8" path="res://Resources/environment.tres" id="1_48xlc"]
 [ext_resource type="Theme" uid="uid://beui2wbtbq7i0" path="res://Resources/black_and_white.tres" id="2_48xlc"]
 
@@ -54,15 +54,21 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 25
 
-[node name="Play" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="PlaySolo" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_48xlc")
-text = "PLAY"
+text = "Play SOLO"
+
+[node name="PlayDuo" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_48xlc")
+text = "Play DUO"
 
 [node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_48xlc")
 text = "Quit"
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/PlaySolo" to="." method="_on_play_solo_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/PlayDuo" to="." method="_on_play_duo_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
