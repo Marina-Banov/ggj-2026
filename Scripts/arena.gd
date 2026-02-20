@@ -1,11 +1,17 @@
 extends Node2D
 
-const TARGETS = [
-	Transform2D(PI, Vector2(550, 550)),
-	Transform2D(-PI/2, Vector2( 0, 550)),
-	Transform2D(PI/2, Vector2(550,  0)),
-	Transform2D(0, Vector2( 0,  0))
-]
+var TARGETS = []
+const HALF_SIZE = 275.0
+const MARGIN = 20.0
+
+
+func _ready() -> void:
+	TARGETS = [
+		Transform2D(PI, %WallBottom.position),
+		Transform2D(-PI/2, %WallLeft.position),
+		Transform2D(PI/2, %WallRight.position),
+		Transform2D(0, %WallTop.position)
+	]
 
 
 func spawn_line() -> void:
@@ -21,5 +27,8 @@ func _spawn_pickup() -> void:
 	const PICKUP = preload("res://Scenes/pickup.tscn")
 	var new_pickup = PICKUP.instantiate()
 	var rng = RandomNumberGenerator.new()
-	new_pickup.global_position = Vector2(rng.randf_range(20.0, 530.0), rng.randf_range(20.0, 530.0))
+	new_pickup.global_position = Vector2(
+		rng.randf_range(-HALF_SIZE + MARGIN, HALF_SIZE - MARGIN),
+		rng.randf_range(-HALF_SIZE + MARGIN, HALF_SIZE - MARGIN)
+	)
 	add_child(new_pickup)

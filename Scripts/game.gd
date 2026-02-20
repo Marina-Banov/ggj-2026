@@ -3,6 +3,11 @@ extends Node2D
 
 func _ready() -> void:
 	get_tree().node_added.connect(_on_node_added)
+	var vw = get_viewport_rect().size
+	%Arena1.position = Vector2(vw.x - 600, vw.y) / 2
+	%Player1.position = Vector2(vw.x - 600, vw.y) / 2
+	%Arena2.position = Vector2(vw.x + 600, vw.y) / 2
+	%Player2.position = Vector2(vw.x + 600, vw.y) / 2
 
 
 func _on_node_added(node: Node) -> void:
