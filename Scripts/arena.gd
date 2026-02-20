@@ -23,7 +23,7 @@ func spawn_line() -> void:
 	add_child(new_projectile)
 
 
-func _spawn_pickup() -> void:
+func spawn_pickup() -> void:
 	const PICKUP = preload("res://Scenes/pickup.tscn")
 	var new_pickup = PICKUP.instantiate()
 	var rng = RandomNumberGenerator.new()

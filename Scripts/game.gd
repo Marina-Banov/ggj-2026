@@ -27,3 +27,8 @@ func _on_player_died(player_id: int) -> void:
 	get_tree().paused = true
 	%GameOver.set_winner_text(winner)
 	%GameOver.visible = true
+
+
+func _on_timer_timeout() -> void:
+	%Arena1.spawn_pickup()
+	%Arena2.spawn_pickup()
