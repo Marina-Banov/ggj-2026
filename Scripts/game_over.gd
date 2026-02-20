@@ -1,8 +1,8 @@
 extends CanvasLayer
 
 
-func set_winner_text(player_id: int) -> void:
-	%Winner.text = "Player {0} won!".format([player_id])
+func set_winner_text(text: String) -> void:
+	%Winner.text = text
 
 
 func _on_play_pressed() -> void:

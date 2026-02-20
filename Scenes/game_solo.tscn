@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1prt8d08w5ok"]
+[gd_scene load_steps=8 format=3 uid="uid://b1prt8d08w5ok"]
 
 [ext_resource type="Script" uid="uid://b1qhtto1i4pbf" path="res://Scripts/game_solo.gd" id="1_7lhal"]
 [ext_resource type="Environment" uid="uid://bap1tngmqa2y8" path="res://Resources/environment.tres" id="1_v265e"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://btmihvoaaef4b" path="res://Scenes/arena.tscn" id="3_vdxbm"]
 [ext_resource type="PackedScene" uid="uid://dwb1gu3cggcp8" path="res://Scenes/game_over.tscn" id="4_sn57n"]
 [ext_resource type="PackedScene" uid="uid://b0nmehfrf5aot" path="res://Components/progressive_timer.tscn" id="6_vdxbm"]
+[ext_resource type="Theme" uid="uid://beui2wbtbq7i0" path="res://Resources/black_and_white.tres" id="7_sn57n"]
 
 [node name="GameSolo" type="Node2D"]
 script = ExtResource("1_7lhal")
@@ -17,6 +18,22 @@ environment = ExtResource("1_v265e")
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0.05882353, 0.07058824, 0.10980392, 1)
+
+[node name="ScoreLabel" type="Label" parent="Background"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 548.5
+offset_top = 20.0
+offset_right = -548.5
+offset_bottom = -679.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("7_sn57n")
+text = "Score: 0"
 
 [node name="Player" parent="." instance=ExtResource("2_7lhal")]
 unique_name_in_owner = true
@@ -36,4 +53,5 @@ start_interval = 2.0
 min_interval = 0.5
 duration = 30.0
 
+[connection signal="player_died" from="Player" to="." method="_on_player_player_died"]
 [connection signal="progressed_timeout" from="ProgressiveTimer" to="." method="_on_timer_timeout"]
