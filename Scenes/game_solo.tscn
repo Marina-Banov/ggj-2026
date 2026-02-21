@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1prt8d08w5ok"]
+[gd_scene load_steps=9 format=3 uid="uid://b1prt8d08w5ok"]
 
 [ext_resource type="Script" uid="uid://b1qhtto1i4pbf" path="res://Scripts/game_solo.gd" id="1_7lhal"]
 [ext_resource type="Environment" uid="uid://bap1tngmqa2y8" path="res://Resources/environment.tres" id="1_v265e"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://btmihvoaaef4b" path="res://Scenes/arena.tscn" id="3_vdxbm"]
 [ext_resource type="PackedScene" uid="uid://dwb1gu3cggcp8" path="res://Scenes/game_over.tscn" id="4_sn57n"]
 [ext_resource type="PackedScene" uid="uid://b0nmehfrf5aot" path="res://Components/progressive_timer.tscn" id="6_vdxbm"]
+[ext_resource type="PackedScene" uid="uid://62okd4jujc15" path="res://Scenes/pause_menu.tscn" id="7_lx2xe"]
 [ext_resource type="Theme" uid="uid://beui2wbtbq7i0" path="res://Resources/black_and_white.tres" id="7_sn57n"]
 
 [node name="GameSolo" type="Node2D"]
@@ -45,6 +46,10 @@ unique_name_in_owner = true
 position = Vector2(555, 356)
 
 [node name="GameOver" parent="." instance=ExtResource("4_sn57n")]
+unique_name_in_owner = true
+visible = false
+
+[node name="PauseMenu" parent="." instance=ExtResource("7_lx2xe")]
 unique_name_in_owner = true
 visible = false
 
