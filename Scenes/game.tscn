@@ -20,20 +20,20 @@ color = Color(0.05882353, 0.07058824, 0.10980392, 1)
 
 [node name="Player1" parent="." instance=ExtResource("1_80nbo")]
 unique_name_in_owner = true
-position = Vector2(316, 295)
+position = Vector2(316, 360)
 player_id = 1
 
 [node name="Arena1" parent="." instance=ExtResource("2_e2o6t")]
 unique_name_in_owner = true
-position = Vector2(357, 344)
+position = Vector2(357, 360)
 
 [node name="Arena2" parent="." instance=ExtResource("2_e2o6t")]
 unique_name_in_owner = true
-position = Vector2(935, 348)
+position = Vector2(935, 360)
 
 [node name="Player2" parent="." instance=ExtResource("1_80nbo")]
 unique_name_in_owner = true
-position = Vector2(851, 331)
+position = Vector2(851, 360)
 player_id = 2
 
 [node name="GameOver" parent="." instance=ExtResource("4_3dryh")]

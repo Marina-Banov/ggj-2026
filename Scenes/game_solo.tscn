@@ -38,12 +38,12 @@ text = "Score: 0"
 
 [node name="Player" parent="." instance=ExtResource("2_7lhal")]
 unique_name_in_owner = true
-position = Vector2(556, 357)
+position = Vector2(640, 360)
 player_id = 1
 
 [node name="Arena" parent="." instance=ExtResource("3_vdxbm")]
 unique_name_in_owner = true
-position = Vector2(555, 356)
+position = Vector2(640, 360)
 
 [node name="GameOver" parent="." instance=ExtResource("4_sn57n")]
 unique_name_in_owner = true
