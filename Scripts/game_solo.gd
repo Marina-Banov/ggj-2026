@@ -22,5 +22,5 @@ func _update_score_label():
 
 func _on_player_player_died(_player_id: int) -> void:
 	get_tree().paused = true
-	%GameOver.set_winner_text("Score: {0}".format([score]))
-	%GameOver.visible = true
+	%MenuGameOver.set_winner_text("Score: {0}".format([score]))
+	%MenuGameOver.visible = true

@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://dwb1gu3cggcp8"]
 
-[ext_resource type="Script" uid="uid://dorn5r4x8uyrr" path="res://Scripts/game_over.gd" id="1_8fo1c"]
+[ext_resource type="Script" uid="uid://dorn5r4x8uyrr" path="res://Scripts/menu_game_over.gd" id="1_8fo1c"]
 [ext_resource type="Theme" uid="uid://beui2wbtbq7i0" path="res://Resources/black_and_white.tres" id="2_8fo1c"]
 
-[node name="GameOver" type="CanvasLayer"]
+[node name="MenuGameOver" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_8fo1c")
 

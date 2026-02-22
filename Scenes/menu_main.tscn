@@ -1,16 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://chxfaw62j2bbu"]
 
-[ext_resource type="Script" uid="uid://de2u6yiet1gxc" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
-[ext_resource type="Environment" uid="uid://bap1tngmqa2y8" path="res://Resources/environment.tres" id="1_48xlc"]
-[ext_resource type="Theme" uid="uid://beui2wbtbq7i0" path="res://Resources/black_and_white.tres" id="2_48xlc"]
+[ext_resource type="Script" uid="uid://bqcboelhxi5ql" path="res://Scripts/menu_main.gd" id="1_stxgw"]
+[ext_resource type="Environment" uid="uid://bap1tngmqa2y8" path="res://Resources/environment.tres" id="2_jbiok"]
+[ext_resource type="Theme" uid="uid://beui2wbtbq7i0" path="res://Resources/black_and_white.tres" id="3_c8ict"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48xlc"]
 
-[node name="MainMenu" type="CanvasLayer"]
-script = ExtResource("1_1ehe0")
+[node name="MenuMain" type="CanvasLayer"]
+script = ExtResource("1_stxgw")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_48xlc")
+environment = ExtResource("2_jbiok")
 
 [node name="Background" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -37,7 +37,7 @@ layout_mode = 2
 
 [node name="Title" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_48xlc")
+theme = ExtResource("3_c8ict")
 theme_override_colors/font_color = Color(1, 0.8255208, 0.9976315, 1)
 theme_override_font_sizes/font_size = 64
 text = "NEON_REFLEX"
@@ -56,17 +56,17 @@ theme_override_constants/separation = 25
 
 [node name="PlaySolo" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_48xlc")
+theme = ExtResource("3_c8ict")
 text = "Play SOLO"
 
 [node name="PlayDuo" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_48xlc")
+theme = ExtResource("3_c8ict")
 text = "Play DUO"
 
 [node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_48xlc")
+theme = ExtResource("3_c8ict")
 text = "Quit"
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/PlaySolo" to="." method="_on_play_solo_pressed"]

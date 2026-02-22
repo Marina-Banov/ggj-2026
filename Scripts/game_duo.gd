@@ -25,8 +25,8 @@ func _on_pickup_collected(player_id: int) -> void:
 func _on_player_died(player_id: int) -> void:
 	var winner = 1 if player_id == 2 else 2
 	get_tree().paused = true
-	%GameOver.set_winner_text("Player {0} won!".format([winner]))
-	%GameOver.visible = true
+	%MenuGameOver.set_winner_text("Player {0} won!".format([winner]))
+	%MenuGameOver.visible = true
 
 
 func _on_timer_timeout() -> void:
