@@ -1,8 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0nmehfrf5aot"]
 
-[ext_resource type="Script" uid="uid://deis8nd16iwkm" path="res://Components/progressive_timer.gd" id="1_nr8hj"]
+[ext_resource type="Script" uid="uid://dq1e1w338lqsc" path="res://Components/progressive_timer.gd" id="1_nr8hj"]
 
-[node name="ProgressiveTimer" type="Node2D"]
+[node name="ProgressiveTimer" type="Timer"]
 script = ExtResource("1_nr8hj")
-
-[node name="Timer" type="Timer" parent="."]
