@@ -2,6 +2,7 @@ extends Node2D
 
 
 func _ready() -> void:
+	GameManager.set_state(GameManager.GameState.PLAYING)
 	get_tree().node_added.connect(_on_node_added)
 	var vw = get_viewport_rect().size
 	%Arena1.position = Vector2(vw.x - 600, vw.y) / 2
@@ -24,9 +25,8 @@ func _on_pickup_collected(player_id: int) -> void:
 
 func _on_player_died(player_id: int) -> void:
 	var winner = 1 if player_id == 2 else 2
-	get_tree().paused = true
+	GameManager.set_state(GameManager.GameState.GAME_OVER)
 	%MenuGameOver.set_winner_text("Player {0} won!".format([winner]))
-	%MenuGameOver.visible = true
 
 
 func _on_timer_timeout() -> void:

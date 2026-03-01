@@ -58,5 +58,5 @@ start_interval = 2.0
 min_interval = 0.5
 duration = 30.0
 
-[connection signal="player_died" from="Player" to="." method="_on_player_player_died"]
+[connection signal="player_died" from="Player" to="." method="_on_player_died"]
 [connection signal="progressed_timeout" from="ProgressiveTimer" to="." method="_on_timer_timeout"]
